@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button onclick="increaseCounter()">Increase</button>
+    <button onclick="decreaseCounter()">Decrease</button>
+
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = count;
+        }
+
+        function increaseCounter() {
+            count++;
+            updateCounter();
+        }
+
+        function decreaseCounter() {
+            count--;
+            updateCounter();
+        }
+    </script>
+</body>
+</html>

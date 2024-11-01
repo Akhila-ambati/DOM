@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #generate {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+        #generate:hover {
+            background-color: #45a049;
+        }
+        #color-box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <button id="generate">Generate Color</button>
+    <div id="color-box">#ffffff</div>
+
+    <script>
+        document.getElementById('generate').addEventListener('click', function() {
+            var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            var colorBox = document.getElementById('color-box');
+            colorBox.style.backgroundColor = color;
+            colorBox.textContent = color; // Show the color code inside the box
+
+        });
+    </script>
+</body>
+</html>
